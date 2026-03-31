@@ -1,0 +1,218 @@
+/* 1. Variables & Reset */
+:root {
+    --primary-red: #b22222;
+    --accent-gold: #ffda44;
+    --bg-cream: #fffaf0;
+    --text-dark: #2d2d2d;
+    --glass: rgba(255, 255, 255, 0.9);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* 2. Navigation Bar */
+header {
+    background: var(--primary-red);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+/* 3. Hero Section */
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Grid Layout */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 5%;
+}
+
+/* 4. Recipe Cards */
+.recipe-card {
+    background: var(--glass);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* 5. Recipe Page */
+.recipe-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.recipe-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f8f8f8;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 6px solid var(--primary-red);
+}
+
+/* 6. Buttons */
+.btn {
+    display: inline-block;
+    background: var(--primary-red);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #800000;
+    box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary-red);
+    color: white;
+    margin-top: 40px;
+}
+
+/* ========================= */
+/* 7. RESPONSIVENESS */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .intro {
+        padding: 40px 15px;
+        font-size: 14px;
+    }
+
+    .recipe-grid {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .recipe-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .recipe-meta {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 0.8rem;
+    }
+
+    .recipe-card img {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .recipe-container {
+        padding: 15px;
+    }
+}
